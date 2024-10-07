@@ -78,4 +78,3 @@ class CyberdropCrawler(Crawler):
         """Parses a datetime string into a unix timestamp"""
         date = datetime.datetime.strptime(date, "%d.%m.%Y")
         return calendar.timegm(date.timetuple())
-
