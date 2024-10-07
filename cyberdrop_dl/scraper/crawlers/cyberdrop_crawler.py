@@ -61,11 +61,16 @@ class CyberdropCrawler(Crawler):
         if await self.check_complete_from_referer(scrape_item):
             return
 
+        # Adjust the scrape_item URL to use the new /d/ format instead of /f/
+        # Assuming the URL part after "/f/" should be moved to the new format
+        filename_part = scrape_item.url.path.split("/f/")[1]
+        scrape_item.url = URL(f"https://k1.cyberdrop.ch/api/file/d/{filename_part}?token=null")
+
         async with self.request_limiter:
             JSON_Resp = await self.client.get_json(self.domain, self.api_url / "file" / "info" / scrape_item.url.path[3:])
 
         filename, ext = await get_filename_and_ext(JSON_Resp["name"])
-        
+
         async with self.request_limiter:
             JSON_Resp = await self.client.get_json(self.domain, self.api_url / "file" / "auth" / scrape_item.url.path[3:])
         
