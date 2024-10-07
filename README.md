@@ -2,6 +2,9 @@
 
 **Bulk downloader for multiple file hosts**
 
+**Most of the forks of this repo are not updated to incorporate a workaround for the recent changes to cyberdrop.me using DDOS-Guard.**
+**I have made only a few simple modifications to the URL structure to allow downloads to work again.**
+
 [![PyPI version](https://badge.fury.io/py/cyberdrop-dl.svg)](https://badge.fury.io/py/cyberdrop-dl)
 [![Downloads](https://static.pepy.tech/badge/cyberdrop-dl)](https://pepy.tech/project/cyberdrop-dl)
 [![Downloads](https://static.pepy.tech/badge/cyberdrop-dl/month)](https://pepy.tech/project/cyberdrop-dl)
